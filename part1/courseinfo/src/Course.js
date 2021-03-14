@@ -25,8 +25,8 @@ export const Course = ({course}) => (
 
         <ul>
             {course.parts.map(part => (
-                <li>
-                    <Content name={part.name} exercises={part.exercises} key={part.id}/>
+                <li key={part.id}>
+                    <Content name={part.name} exercises={part.exercises} />
                 </li>
             ))}
         </ul>
