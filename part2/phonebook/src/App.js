@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import Persons from './Person.js'
+import Persons from './Persons.js'
 import PersonForm from './PersonForm.js';
 import Filter from './Filter.js'
 
