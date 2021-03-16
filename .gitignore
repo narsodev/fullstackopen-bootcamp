@@ -10,6 +10,8 @@ node_modules
 
 # production
 /build
+pruebas
+countries
 
 # misc
 .DS_Store
