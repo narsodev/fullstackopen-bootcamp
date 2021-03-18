@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-
-import Persons from './Persons.js'
+import axios from 'axios';
+import Persons from './Persons.js';
 import PersonForm from './PersonForm.js';
-import Filter from './Filter.js'
+import Filter from './Filter.js';
 
 
 const App = () => {
@@ -17,10 +17,10 @@ const App = () => {
 
   useEffect(() =>{
     setIsLoading(true)
-    fetch('http://localhost:3001/persons')
-      .then(response => response.json())
-      .then(json => {
-        setPersons(json)
+    axios
+      .get('http://localhost:3001/persons')
+      .then(response => {
+        setPersons(response.data)
         setIsLoading(false)
       })
   } , [])
