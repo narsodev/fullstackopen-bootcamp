@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import './App.css'
 
-const Country = ({country}) => {
+const Country = ({country, dis="none"}) => {
   return ( 
-  <div>
+  <div id={country.name} style={{display: `${dis}`}}>
 
     <h3><u>{country.name}</u></h3>
     <p><strong>Capital:</strong> {country.capital}</p>
@@ -22,10 +22,24 @@ const Country = ({country}) => {
 }
 
 const Countries = ({countries = []}) => {
-  if(countries.length === 1) return <Country country={countries[0]} />
+  const [show, setShow] = useState(new Array(countries.length))
+
+  if(countries.length === 1) return <Country country={countries[0]} dis="block" />
+
   else if(countries.length > 10) return <p>Too many matches, specify another filter</p>
+
   else {
-    return countries.map(country => <p key={country.name}>{country.name}</p>)
+    return countries.map((country, idx) => 
+    <div key={country.name}>
+      <p>{country.name}</p>
+      <button onClick={() => {
+        const tempShow = [...show]
+        tempShow[idx] = tempShow[idx] !== "block" ? "block" : "none"
+        setShow(tempShow)
+      }}>Show</button>
+      <Country country={country} dis={show[idx]}/>
+    </div>
+    )
   }
 }
 
