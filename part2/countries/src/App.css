@@ -9,3 +9,9 @@ li{
 h3{
     font-size: 22px;
 }
+.name-of-country{
+    display: inline;
+}
+.weather-image{
+    width:100px;
+}
