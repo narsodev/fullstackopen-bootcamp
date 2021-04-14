@@ -1,0 +1,13 @@
+.flag {
+    width: 350px;
+    height: 200px;
+}
+
+.country {
+    border: 1px solid black;
+}
+
+.weather {
+    width: 150px;
+    height: 150;
+}
