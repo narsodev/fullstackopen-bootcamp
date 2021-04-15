@@ -16,7 +16,7 @@ const Country = ({name, capital, population, languages, flag, one = false}) => {
                 })
         }
         return () => isMounted = false
-    }, [show])
+    }, [show, capital])
 
     return (
         <div className="country">
