@@ -25,7 +25,12 @@ const Country = ({name, capital, population, languages, flag, one = false}) => {
             {one ? 
                 ''
             :
-                <button onClick={() => setShow(!show)}>Show</button>
+            <>
+            Show: 
+                <input type="checkbox" 
+                onClick={() => setShow(!show)}>   
+                </input>
+            </>
             }
 
             {show ? 
@@ -48,9 +53,10 @@ const Country = ({name, capital, population, languages, flag, one = false}) => {
                     <img src={flag} alt={`Flag of ${name}`} className="flag"/>
 
 
-                    <h4>Weather in {capital}:</h4>
+                    
                     {weather !== undefined ? 
                     <>
+                        <h4>Weather in {capital}:</h4>
                         <p>
                             <strong>Temperature:</strong> {weather.temperature} ºC
                             <br />
@@ -59,7 +65,7 @@ const Country = ({name, capital, population, languages, flag, one = false}) => {
                         <img src={weather.weather_icons} alt={`Weather of ${capital}`} className="weather" />
                     </>
                         :
-                        'Loading weather...'
+                        <p>Weather not available</p>
                     }
                     
                 </>
