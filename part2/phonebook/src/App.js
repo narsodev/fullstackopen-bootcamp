@@ -7,11 +7,7 @@ import Filter from './Filter.js';
 
 const App = () => {
 
-  const [ newName, setNewName ] = useState('')
-  const [ newNumber, setNewNumber ] = useState('')
   const [ search, setSearch ] = useState('')
-
-  
   const [ persons, setPersons ] = useState([])
   const [ isLoading, setIsLoading ] = useState(false)
 
@@ -29,13 +25,11 @@ const App = () => {
     <>
       <h1>Phonebook</h1>
         <Filter setSearch={setSearch} search={search} />
-       
+
       <div>
         <h2>Add a new one</h2>
         <PersonForm 
           persons={persons} setPersons={setPersons} 
-          newName={newName} setNewName={setNewName} 
-          newNumber={newNumber} setNewNumber={setNewNumber} 
         />
       </div>
 
