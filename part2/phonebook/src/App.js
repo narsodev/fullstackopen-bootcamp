@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import Persons from './Persons.js';
-import PersonForm from './PersonForm.js';
-import Filter from './Filter.js';
+import Persons from './components/Persons.js';
+import PersonForm from './components/PersonForm.js';
+import Filter from './components/Filter.js';
 
 
 const App = () => {
